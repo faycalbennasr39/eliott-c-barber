@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - Eliott Barber</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loader" class="loader-overlay">
+        <div class="loader-spinner"></div>
+        <p>Chargement des disponibilités...</p>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>✂️ Eliott Barber</h1>
+            <p class="subtitle">Réservez votre rendez-vous en ligne</p>
+            <div class="social-links">
+                <a href="https://instagram.com/eliott_c_barber" target="_blank" rel="noopener noreferrer" class="social-link">
+                    📸 @eliott_c_barber
+                </a>
+            </div>
+            <p class="contact-message">N'hésitez pas à me contacter sur Instagram pour toute question ou problème de réservation !</p>
+        </header>
+
+        <main>
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    <button id="prevMonth" class="month-nav">◄</button>
+                    <h2 id="currentMonth">Février 2026</h2>
+                    <button id="nextMonth" class="month-nav">►</button>
+                </div>
+                
+                <div class="calendar-grid" id="calendarDays">
+                    <div class="calendar-day-header">Lundi</div>
+                    <div class="calendar-day-header">Mardi</div>
+                    <div class="calendar-day-header">Mercredi</div>
+                    <div class="calendar-day-header">Jeudi</div>
+                    <div class="calendar-day-header">Vendredi</div>
+                    <div class="calendar-day-header">Samedi</div>
+                    <div class="calendar-day-header">Dimanche</div>
+                </div>
+            </div>
+
+            <div id="creneauxSection" class="creneaux-section" style="display: none;">
+                <h3 id="selectedDateTitle">Créneaux disponibles</h3>
+                <div id="creneauxList" class="creneaux-list"></div>
+            </div>
+
+            <form id="reservationForm" style="display: none;">
+                <h3>Vos informations</h3>
+                
+                <div class="form-group">
+                    <label for="prenom">Prénom *</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nom">Nom *</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telephone">Téléphone *</label>
+                    <input type="tel" id="telephone" name="telephone" required placeholder="06 12 34 56 78">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="prestation">Prestation *</label>
+                    <select id="prestation" name="prestation" required>
+                        <option value="">-- Choisissez une prestation --</option>
+                        <option value="Coupe homme 20€">Coupe homme 20€</option>
+                        <option value="Coupe enfant 15€ (-12ans)">Coupe enfant 15€ (-12ans)</option>
+                        <option value="Coupe + Barbe 25€">Coupe + Barbe 25€</option>
+                    </select>
+                </div>
+
+                <div class="recap">
+                    <strong>Récapitulatif :</strong><br>
+                    <span id="recapText"></span>
+                </div>
+
+                <button type="submit" id="submitBtn">
+                    <span id="btnText">Confirmer mon rendez-vous</span>
+                    <span id="btnLoader" class="loader" style="display: none;">⏳</span>
+                </button>
+            </form>
+
+            <div id="message" class="message" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>✂️ Eliott Barber</p>
+            <p>Du lundi au samedi • 9h-19h</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
